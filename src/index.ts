@@ -1,14 +1,8 @@
 import { ScvFileReader } from './ScvFileReader';
+import { MatchResult } from './MatchResult';
 
 const reader = new ScvFileReader('football.csv');
 reader.read();
-
-// Enum - enumeration
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D',
-}
 
 let manUnitedWins = 0;
 
