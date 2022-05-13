@@ -5,14 +5,17 @@ import { ConsoleReport } from './reportTargets/ConsoleReport';
 import { HtmlReport } from './reportTargets/HtmlReport';
 import { Summary } from './Summary';
 
-const csvFileReader = new CsvFileReader('football.csv');
-const matchReader = new MatchReader(csvFileReader);
+// const csvFileReader = new CsvFileReader('football.csv');
+// const matchReader = new MatchReader(csvFileReader);
+
+const matchReader = MatchReader.fromCsv('football.csv');
 matchReader.load();
 
 // const summary = new Summary(
 //   new WinsAnalysis('Man United'),
 //   new ConsoleReport()
 // );
-const summary = new Summary(new WinsAnalysis('Man United'), new HtmlReport());
+// const summary = new Summary(new WinsAnalysis('Man United'), new HtmlReport());
+const summary1 = Summary.winsAnalysisWithHtmlReport('Man United');
 
-summary.buildAndPrintReport(matchReader.matches);
+summary1.buildAndPrintReport(matchReader.matches);
